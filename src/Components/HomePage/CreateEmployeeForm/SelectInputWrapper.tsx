@@ -1,4 +1,5 @@
 import { FieldMetaState } from "react-final-form";
+import FormError from "./FormError";
 
 interface SelectInputWrapper {
     labelText: string;
@@ -41,9 +42,7 @@ const SelectInputWrapper = ({
                     );
                 })}
             </select>
-            {meta?.error && meta?.touched && (
-                <span className="formError"> {meta?.error} </span>
-            )}
+            {meta?.error && meta?.touched && <FormError error={meta?.error} />}
         </div>
     );
 };

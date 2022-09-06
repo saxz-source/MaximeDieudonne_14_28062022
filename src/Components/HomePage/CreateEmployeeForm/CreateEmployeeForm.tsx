@@ -6,9 +6,8 @@ import {
     validateEmployeeForm,
 } from "../../../Functions/employeeFormValidation";
 import SelectInputWrapper from "./SelectInputWrapper";
-import SubmitButton from "../../Buttons/SubmitButton";
-import DatePicker from "react-date-picker";
-import DateInputWrapper from "./DateInputWrapper";
+import { useDispatch } from "react-redux";
+import { addEmployee } from "../../../Features/employees.slice";
 
 const CreateEmployeeForm = () => {
     const selectOptions: { text: string; value: string }[] = [
@@ -33,21 +32,22 @@ const CreateEmployeeForm = () => {
             value: "legal",
         },
     ];
+    const dispatch = useDispatch();
     const sleep = (ms: any) =>
         new Promise((resolve) => setTimeout(resolve, ms));
 
     const onSubmit = (e: any) => {
-     //   e.preventDefault()
-        console.log(e);
-        // await sleep(300)
-
+        dispatch(addEmployee(e));
         return;
     };
+
+    const handleSubmit = () => {};
 
     const validateForm = (
         formValues: any
     ): ValidationErrors | Promise<ValidationErrors> => {
         const errors: EmployeeFormErrors = validateEmployeeForm(formValues);
+        console.log(errors);
         return errors;
     };
 
@@ -56,7 +56,7 @@ const CreateEmployeeForm = () => {
             onSubmit={onSubmit}
             validate={validateForm}
             render={({ handleSubmit }) => (
-                <form action="#" id="create-employee" onSubmit={handleSubmit}>
+                <form id="create-employee" onSubmit={handleSubmit}>
                     <fieldset className="personal fieldset--grid">
                         <legend>General</legend>
                         <Field name="firstName">
@@ -118,6 +118,8 @@ const CreateEmployeeForm = () => {
                                             inputId="start-date"
                                             inputType="date"
                                             labelText="Start Date"
+                                            {...input}
+                                            meta={meta}
                                         ></InputWrapper>
                                     </>
                                 );
@@ -177,7 +179,7 @@ const CreateEmployeeForm = () => {
                                     <>
                                         <InputWrapper
                                             inputId="zip-code"
-                                            inputType="number"
+                                            inputType="text"
                                             labelText="Zip Code"
                                             {...input}
                                             meta={meta}
@@ -191,7 +193,7 @@ const CreateEmployeeForm = () => {
                     </fieldset>
 
                     <fieldset>
-                        <Field name="zipCode">
+                        <Field name="department">
                             {({ input, meta }) => {
                                 return (
                                     <SelectInputWrapper
@@ -208,7 +210,7 @@ const CreateEmployeeForm = () => {
                         <legend>Department</legend>
                     </fieldset>
                     <div className="form--button-zone">
-                   <button type="submit"> button </button>
+                        <button type="submit"> button </button>
                     </div>
                 </form>
             )}
@@ -217,4 +219,4 @@ const CreateEmployeeForm = () => {
 };
 
 export default CreateEmployeeForm;
- // <SubmitButton text={"SAVE"} classNames={"formButton"} />
+// <SubmitButton text={"SAVE"} classNames={"formButton"} />

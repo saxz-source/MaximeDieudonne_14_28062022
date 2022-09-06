@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { EmployeeTableZone } from "../EmployeeTable/EmployeeTableZone";
 import "./EmployeePage.css";
 
 const EmployeePage = () => {
@@ -9,6 +10,8 @@ const EmployeePage = () => {
                 <table id="employee-table" className="display"></table>
                 <Link to="/">Home</Link>
             </div>
+
+            <EmployeeTableZone/>
         </main>
     );
 };

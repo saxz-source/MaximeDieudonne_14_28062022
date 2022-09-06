@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-date-picker";
 import { FieldInputProps, FieldMetaState } from "react-final-form";
+import FormError from "./FormError";
 
 interface DateInputWrapper {
     labelText: string;
@@ -25,7 +26,7 @@ const DateInputWrapper = ({
             <DatePicker
                 onChange={(newDate: Date) => {
                     onChange(newDate);
-                    input.onChange(newDate)
+                    input.onChange(newDate);
                 }}
                 value={value}
             />
@@ -37,9 +38,7 @@ const DateInputWrapper = ({
                 className={meta?.error ? "input--hasError" : ""}
             />
             */}
-            {meta?.error && meta?.touched && (
-                <span className="formError"> {meta?.error} </span>
-            )}
+            {meta?.error && meta?.touched && <FormError error={meta?.error} />}
         </div>
     );
 };

@@ -1,0 +1,35 @@
+/* TOP PART*/
+
+.tableAbove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Number Of entries selector */
+
+.numberOfEntries--label {
+    position: absolute;
+    left: -10000px;
+}
+
+/* Search employee div */
+
+.searchEmployee {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/***************TABLE*******************************************/
+
+
+
+
+/*BELOW PART */
+
+.tablePaginatorDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

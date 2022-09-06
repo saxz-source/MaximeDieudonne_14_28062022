@@ -81,6 +81,35 @@
     font-size: 0.9rem;
 }
 
+.formError--invisible {
+    opacity: 1;
+    transition: smoothappear 0.3s ease-in-out;
+}
+
+.formError--visible {
+    opacity: 1;
+    transition: smoothappear 0.3s ease-in-out;
+}
+
+.displayNone {
+    display: none;
+}
+
+.displayBlock {
+    display: block;
+}
+
+@keyframes smoothappear {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(2);
+    }
+}
+
 .input--hasError {
     background: red;
     outline: 1px solid rgb(255, 43, 43);
@@ -113,7 +142,7 @@
 }
 
 .dateInputWrapper {
-    display : flex;
+    display: flex;
     align-items: flex-start;
     flex-direction: column;
 }
