@@ -1,0 +1,19 @@
+.button--basics {
+    cursor: pointer;
+    border: none;
+}
+
+.formButton {
+    min-height: 2.5rem;
+    min-width: 5rem;
+    padding: 0.35rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 7px;
+    background-color: var(--secondLogoColor);
+    color: white;
+    transition: 0.3s;
+}
+
+.formButton:hover {
+    background-color: var(--firstLogoColor);
+}

@@ -1,0 +1,31 @@
+.mainHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.3rem 1rem;
+    box-shadow: 1px 1px 6px var(--midgrey);
+}
+
+.mainHeader--logoAndTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.mainHeader--logo {
+    max-height: 4rem;
+    max-width: 4rem;
+}
+
+.mainHeader--title {
+    color: var(--midgrey);
+    font-size: 1rem;
+}
+
+.mainHeader--seeUserIcon {
+    height : 2.5rem;
+    width: 2.5rem;
+    color: var(--thirdLogoColor);
+}

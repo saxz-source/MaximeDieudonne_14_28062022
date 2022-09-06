@@ -1,0 +1,15 @@
+.modal {
+    padding: 2rem;
+    position: relative;
+}
+
+.closeModal {
+    border-radius: 50%;
+    background-color: rgb(31, 54, 102);
+    color: white;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    height: 15px;
+    width: 15px;
+}
