@@ -2,9 +2,9 @@
 
 
 
-export const getSeenEntriesNumber = () => {
+export const getTableParams = () => {
     return (state: any) => {
-        return state.seenEntries;
+        return state.tableParams;
     };
 };
 

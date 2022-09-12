@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSort } from "@fortawesome/free-solid-svg-icons";
 import { nanoid } from "@reduxjs/toolkit";
 import { getFrenchSlashDate } from "../../../Functions/transformDate";
 import { Employee } from "../../../Types/Employee";
@@ -19,26 +21,32 @@ export const EmployeeTable = ({ employees }: EmployeeTableProps) => {
         "Zip Code",
     ];
 
-    const data = {
-        headers: [tableTHs],
-        employees: employees,
-    };
-
     return (
-        <div>
-            <table>
-                <thead>
+        <>
+            <table className="employeeTable">
+                <thead className="employeeTable--header">
                     <tr>
                         {tableTHs.map((th: string) => {
-                            return <th key={nanoid()}> {th} </th>;
+                            return (
+                                <th key={nanoid()}>
+                                    {" "}
+                                    <span>{th} </span>{" "}
+                                    <span>
+                                        <FontAwesomeIcon icon={faSort} />
+                                    </span>{" "}
+                                </th>
+                            );
                         })}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="employeeTable--body">
                     {employees.length > 0 &&
                         employees.map((e: Employee) => {
                             return (
-                                <tr key={nanoid()}>
+                                <tr
+                                    key={nanoid()}
+                                    className="employeeTable--line"
+                                >
                                     <td> {e.firstName}</td>
                                     <td> {e.lastName}</td>
                                     <td> {getFrenchSlashDate(e.startDate)}</td>
@@ -54,7 +62,7 @@ export const EmployeeTable = ({ employees }: EmployeeTableProps) => {
                 </tbody>
             </table>
             {employees.length < 1 && <p> Aucun employee n'est enregistré</p>}
-        </div>
+        </>
     );
 };
 

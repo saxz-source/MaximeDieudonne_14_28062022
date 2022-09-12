@@ -1,4 +1,5 @@
 export type TableParams = {
 
-    seenEntries : number
+    seenEntries : number,
+    pageNumber : number
 }

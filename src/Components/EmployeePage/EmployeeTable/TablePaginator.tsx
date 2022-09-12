@@ -1,38 +1,54 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { changePageNumber } from "../../../Features/tableParams.slice";
+import { populatePageNumberArray } from "../../../Services/employeeTable.service";
 
 interface TablePaginator {
     totalEntries: number;
     seenEntries: number;
+    pageNumber: number;
 }
 
 export const TablePaginator = ({
     totalEntries,
     seenEntries,
+    pageNumber,
 }: TablePaginator) => {
     const [tabArray, setTabArray] = useState<number[]>([1]);
 
-    const [selectedTab, setSelectedTab] = useState<number>(1);
+    const dispatch = useDispatch();
 
-    const handleSelectedTab = (tabNumber: number) => {
-        setSelectedTab(tabNumber);
+    const handleSelectedPageNumber = (tabNumber: number): void => {
+        if (tabNumber < 1) tabNumber = 1;
+        if (tabNumber > tabArray.length) tabNumber = tabArray.length;
+        dispatch(changePageNumber(tabNumber));
     };
 
-    const populateTabArray = () => {
-        const tabsNumber = totalEntries / seenEntries;
-        const newArray: number[] = [];
-        for (let i = 0; i < tabsNumber; i++) {
-            newArray.push(i);
-        }
-        setTabArray(newArray);
+    /**
+     * Make the array of page numbers
+     */
+    const onPopulatePageNumberArray = (): void => {
+        const pageNumberArray = populatePageNumberArray(
+            totalEntries,
+            seenEntries
+        );
+        setTabArray(pageNumberArray);
     };
 
     useEffect(() => {
-        populateTabArray();
+        onPopulatePageNumberArray();
     }, [totalEntries, seenEntries]);
+
     return (
         <div className="tablePaginatorDiv">
-            <span>Previous</span>
+            <span
+                onClick={() => {
+                    handleSelectedPageNumber(pageNumber - 1);
+                }}
+            >
+                Previous
+            </span>
 
             {tabArray.map((t: number) => {
                 return (
@@ -40,10 +56,10 @@ export const TablePaginator = ({
                         key={nanoid()}
                         className={
                             "paginatorTab " +
-                            (selectedTab === t && "selectedTab")
+                            (pageNumber === t && "selectedTab")
                         }
                         onClick={() => {
-                            handleSelectedTab(t);
+                            handleSelectedPageNumber(t);
                         }}
                     >
                         {t}
@@ -51,7 +67,13 @@ export const TablePaginator = ({
                 );
             })}
 
-            <span>Next</span>
+            <span
+                onClick={() => {
+                    handleSelectedPageNumber(pageNumber + 1);
+                }}
+            >
+                Next
+            </span>
         </div>
     );
 };
