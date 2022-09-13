@@ -15,14 +15,14 @@ const TableNumberReminder = ({
 
     useEffect(() => {
         setResult(pageNumber * seenEntries);
-    }, [pageNumber, seenEntries]);
+    }, [pageNumber, seenEntries, totalEntries]);
 
     return (
         <span className="tableReminder">
             Showing {pageNumberByEntries - seenEntries + 1} to{" "}
             {pageNumberByEntries > totalEntries
-                ? pageNumberByEntries
-                : totalEntries}{" "}
+                ? totalEntries
+                : pageNumberByEntries}{" "}
             of {totalEntries}
         </span>
     );

@@ -1,10 +1,14 @@
 export type Employee = {
-    id : string;
+    [key: string]: any;
+    id: string;
     firstName: string;
     lastName: string;
     birthDate: Date;
     startDate: Date;
-    adress: Adress;
+    street: string;
+    city: string;
+    state: string;
+    zipCode: number;
     department: string;
 };
 

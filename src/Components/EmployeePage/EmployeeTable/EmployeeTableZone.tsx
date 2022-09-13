@@ -11,25 +11,27 @@ import { Employee } from "../../../Types/Employee";
 import { TableParams } from "../../../Types/TableParams";
 import TableNumberReminder from "./TableNumberReminder";
 import { TablePaginator } from "./TablePaginator";
-import { getDisplayedEmployees } from "../../../Services/employeeTable.service";
+import {
+    getDisplayedEmployees,
+    getViewedEmployees,
+} from "../../../Services/employeeTable.service";
 
 export const EmployeeTableZone = () => {
-    // const employees = useSelector(getAllEmployees());
-
-    const employeesArray = mockEmployees;
-
-    const [employees, setEmployees] = useState<Employee[]>(employeesArray);
+    const employeesArray: Employee[] = mockEmployees;
+    const [employeesLength, setEmployeesLength] = useState<number>(
+        employeesArray.length
+    );
+    const [viewedEmployees, setViewedEmployees] =
+        useState<Employee[]>(employeesArray);
 
     const tableParams: TableParams = useSelector(getTableParams());
 
-    //const [loadStatus, setLoadStatus] = useState<string>("loading")
-
-    const searchEmployee = () => {};
-
-    const changeTab = () => {};
-
     useEffect(() => {
-        setEmployees(getDisplayedEmployees(tableParams, employeesArray));
+        // Get the array of employees corresponding to the search value, and sorted
+        const newArray = getDisplayedEmployees(tableParams, employeesArray);
+        setEmployeesLength(newArray.length);
+        // Just get the viewed employees
+        setViewedEmployees(getViewedEmployees(tableParams, newArray));
     }, [tableParams]);
 
     return (
@@ -38,16 +40,23 @@ export const EmployeeTableZone = () => {
                 <ShowEntriesSelector seenEntries={tableParams.seenEntries} />
                 <SearchEmployee />
             </div>
-            <div>{employees && <EmployeeTable employees={employees} />}</div>
+            <div>
+                {viewedEmployees && (
+                    <EmployeeTable
+                        employees={viewedEmployees}
+                        tableParams={tableParams}
+                    />
+                )}
+            </div>
             <div className="tableBelow">
                 <TableNumberReminder
-                    totalEntries={employeesArray.length}
+                    totalEntries={employeesLength}
                     seenEntries={tableParams.seenEntries}
                     pageNumber={tableParams.pageNumber}
                 />
 
                 <TablePaginator
-                    totalEntries={employeesArray.length}
+                    totalEntries={employeesLength}
                     seenEntries={tableParams.seenEntries}
                     pageNumber={tableParams.pageNumber}
                 />

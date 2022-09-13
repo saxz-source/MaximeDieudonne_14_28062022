@@ -1,5 +1,11 @@
 export type TableParams = {
+    seenEntries: number;
+    pageNumber: number;
+    sortedColumn: SortedColumn;
+    searchValue : string;
+};
 
-    seenEntries : number,
-    pageNumber : number
-}
+export type SortedColumn = {
+    name: string;
+    type: string;
+};

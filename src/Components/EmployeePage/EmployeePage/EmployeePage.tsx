@@ -5,13 +5,13 @@ import "./EmployeePage.css";
 const EmployeePage = () => {
     return (
         <main>
-            <div id="employee-div" className="container">
-                <h1>Current Employees</h1>
+            <div></div>
+            <div id="employee-div">
+                <h2 className="formTitle tableTitle">Current Employees</h2>
                 <table id="employee-table" className="display"></table>
-                <Link to="/">Home</Link>
             </div>
 
-            <EmployeeTableZone/>
+            <EmployeeTableZone />
         </main>
     );
 };

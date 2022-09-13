@@ -38,7 +38,7 @@ export const TablePaginator = ({
 
     useEffect(() => {
         onPopulatePageNumberArray();
-    }, [totalEntries, seenEntries]);
+    }, [totalEntries, seenEntries, pageNumber]);
 
     return (
         <div className="tablePaginatorDiv">

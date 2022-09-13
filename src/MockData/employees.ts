@@ -1,4 +1,8 @@
 import { Employee } from "../Types/Employee";
+const yestedayDate = () => {
+    let date = new Date();
+    return date.setDate(date.getDate() - 1);
+};
 
 export const mockEmployees: Employee[] = [
     {
@@ -7,12 +11,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Rigga",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 55555,
-            state: "France",
-            city: "Bordeaux",
-            street: "49 rue des Corbeaux",
-        },
+
+        zipCode: 55555,
+        state: "France",
+        city: "Bordeaux",
+        street: "49 rue des Corbeaux",
         department: "affair",
     },
     {
@@ -21,12 +24,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -35,12 +37,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -49,12 +50,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -63,12 +63,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -77,12 +76,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -91,12 +89,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -105,12 +102,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -119,12 +115,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -133,12 +128,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -147,12 +141,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 254651,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -161,12 +154,11 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 444444,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
         department: "humanR",
     },
     {
@@ -175,12 +167,50 @@ export const mockEmployees: Employee[] = [
         lastName: "Eston",
         birthDate: new Date(),
         startDate: new Date(),
-        adress: {
-            zipCode: 254651,
-            state: "Italy",
-            city: "Napoli",
-            street: "49 strada del parmigiano",
-        },
+
+        zipCode: 111111,
+        state: "Italy",
+        city: "Napoli",
+        street: "49 strada del parmigiano",
+        department: "humanR",
+    },
+    {
+        id: "14",
+        firstName: "Charles",
+        lastName: "Jude",
+        birthDate: new Date(),
+        startDate: new Date(),
+
+        zipCode: 333333,
+        state: "Croatie",
+        city: "Quelquepart",
+        street: "Par la bas",
+        department: "justdoit",
+    },
+    {
+        id: "15",
+        firstName: "Oui",
+        lastName: "Eston",
+        birthDate: new Date(),
+        startDate: new Date(),
+
+        zipCode: 22222,
+        state: "Italy",
+        city: "Napoli",
+        street: "79 strada del parmigiano",
+        department: "humanR",
+    },
+    {
+        id: "16",
+        firstName: "Franc",
+        lastName: "Rivenzi",
+        birthDate: new Date(yestedayDate()),
+        startDate: new Date(yestedayDate()),
+
+        zipCode: 111111,
+        state: "USA",
+        city: "New-York",
+        street: "23 aloalo",
         department: "humanR",
     },
 ];

@@ -22,7 +22,13 @@
 }
 
 /***************TABLE*******************************************/
-
+.employeeTableZone {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 /*BELOW PART */
 
 .tablePaginatorDiv {
@@ -31,23 +37,63 @@
     align-items: center;
 }
 
-.employeeTableZone {
-    width: 80%;
-    min-width: 75vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* TABLE*/
+
+.tableTitle {
+    width: 100%;
+    padding: 0;
 }
 
-.employeeTable tr,
-.employeeTable td,
-.employeeTable th {
+.employeeTable {
+    border-collapse: separate;
+    border-spacing: 0 0.6rem;
+    margin: auto;
+}
+
+
+.employeeTable td {
     padding: 0.2rem 0.4rem;
+}
+
+.employeeTable tbody tr {
+    background-color: #ffffff;
+    
+   /* // box-shadow: 0px 1px 1px 1px #cbec259e; */
+    
+}
+
+.employeeTable td {
+    font-size: 400;
+   border-bottom: 1px solid rgba(67, 72, 80, 0.136);
+   padding: 0rem 0.4rem 0.6rem;
+}
+
+.employeeTable th {
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 0.3rem 0.4rem;
+    text-align: left;
+}
+
+.thText {
+    margin-right: 0.6rem;
+}
+
+.sortNoneIcon {
+    color: rgba(128, 128, 128, 0.4);
+}
+
+.sortUpIcon {
+    color: #6e840f;
+}
+
+.sortDownIcon {
+    color: #6e840f;
 }
 
 .employeeTable tr {
     font-size: 0.9rem;
+    /* border-bottom: 1px solid rgba(128, 128, 128, 0.40) */
 }
 
 .tableAbove,
