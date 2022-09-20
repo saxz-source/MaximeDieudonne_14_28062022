@@ -4,7 +4,7 @@ const HomePage = () => {
     return (
         <>
 
-            <main className="container">
+            <main >
                 <CreateEmpFormZone />
             </main>
         </>

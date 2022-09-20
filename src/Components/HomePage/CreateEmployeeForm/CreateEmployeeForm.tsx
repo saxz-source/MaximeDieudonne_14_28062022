@@ -33,21 +33,16 @@ const CreateEmployeeForm = () => {
         },
     ];
     const dispatch = useDispatch();
-    const sleep = (ms: any) =>
-        new Promise((resolve) => setTimeout(resolve, ms));
 
     const onSubmit = (e: any) => {
         dispatch(addEmployee(e));
         return;
     };
 
-    const handleSubmit = () => {};
-
     const validateForm = (
         formValues: any
     ): ValidationErrors | Promise<ValidationErrors> => {
         const errors: EmployeeFormErrors = validateEmployeeForm(formValues);
-        console.log(errors);
         return errors;
     };
 

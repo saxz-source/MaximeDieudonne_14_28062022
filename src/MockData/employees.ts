@@ -9,7 +9,7 @@ export const mockEmployees: Employee[] = [
         id: "1",
         firstName: "joe",
         lastName: "Rigga",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 55555,
@@ -22,7 +22,7 @@ export const mockEmployees: Employee[] = [
         id: "2",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -35,7 +35,7 @@ export const mockEmployees: Employee[] = [
         id: "3",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -48,7 +48,7 @@ export const mockEmployees: Employee[] = [
         id: "4",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -61,7 +61,7 @@ export const mockEmployees: Employee[] = [
         id: "5",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date ("1990-05-05"),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -74,7 +74,7 @@ export const mockEmployees: Employee[] = [
         id: "6",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -87,7 +87,7 @@ export const mockEmployees: Employee[] = [
         id: "7",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -100,7 +100,7 @@ export const mockEmployees: Employee[] = [
         id: "8",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -113,7 +113,7 @@ export const mockEmployees: Employee[] = [
         id: "9",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -126,7 +126,7 @@ export const mockEmployees: Employee[] = [
         id: "10",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -139,7 +139,7 @@ export const mockEmployees: Employee[] = [
         id: "11",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 254651,
@@ -152,7 +152,7 @@ export const mockEmployees: Employee[] = [
         id: "12",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 444444,
@@ -165,7 +165,7 @@ export const mockEmployees: Employee[] = [
         id: "13",
         firstName: "Carole",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 111111,
@@ -178,7 +178,7 @@ export const mockEmployees: Employee[] = [
         id: "14",
         firstName: "Charles",
         lastName: "Jude",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 333333,
@@ -191,7 +191,7 @@ export const mockEmployees: Employee[] = [
         id: "15",
         firstName: "Oui",
         lastName: "Eston",
-        birthDate: new Date(),
+        dateOfBirth: new Date(),
         startDate: new Date(),
 
         zipCode: 22222,
@@ -204,7 +204,20 @@ export const mockEmployees: Employee[] = [
         id: "16",
         firstName: "Franc",
         lastName: "Rivenzi",
-        birthDate: new Date(yestedayDate()),
+        dateOfBirth: new Date(yestedayDate()),
+        startDate: new Date(yestedayDate()),
+
+        zipCode: 111111,
+        state: "USA",
+        city: "New-York",
+        street: "23 aloalo",
+        department: "humanR",
+    },
+    {
+        id: "16",
+        firstName: "Franc",
+        lastName: "rivenzi",
+        dateOfBirth: new Date(yestedayDate()),
         startDate: new Date(yestedayDate()),
 
         zipCode: 111111,

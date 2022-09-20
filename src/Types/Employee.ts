@@ -3,7 +3,7 @@ export type Employee = {
     id: string;
     firstName: string;
     lastName: string;
-    birthDate: Date;
+    dateOfBirth: Date;
     startDate: Date;
     street: string;
     city: string;

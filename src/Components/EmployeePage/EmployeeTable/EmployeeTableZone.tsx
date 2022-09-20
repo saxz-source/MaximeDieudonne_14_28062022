@@ -15,9 +15,12 @@ import {
     getDisplayedEmployees,
     getViewedEmployees,
 } from "../../../Services/employeeTable.service";
+import StandardLoader from "../../Loader/StandardLoader";
 
 export const EmployeeTableZone = () => {
-    const employeesArray: Employee[] = mockEmployees;
+   //  const employeesArray: Employee[] = mockEmployees;
+   const employeesArray: Employee[] = useSelector(getAllEmployees());
+
     const [employeesLength, setEmployeesLength] = useState<number>(
         employeesArray.length
     );
@@ -27,11 +30,13 @@ export const EmployeeTableZone = () => {
     const tableParams: TableParams = useSelector(getTableParams());
 
     useEffect(() => {
-        // Get the array of employees corresponding to the search value, and sorted
-        const newArray = getDisplayedEmployees(tableParams, employeesArray);
-        setEmployeesLength(newArray.length);
-        // Just get the viewed employees
-        setViewedEmployees(getViewedEmployees(tableParams, newArray));
+        if (employeesArray.length > 0) {
+            // Get the array of employees corresponding to the search value, and sorted
+            const newArray = getDisplayedEmployees(tableParams, employeesArray);
+            setEmployeesLength(newArray.length);
+            // Just get the viewed employees
+            setViewedEmployees(getViewedEmployees(tableParams, newArray));
+        }
     }, [tableParams]);
 
     return (
@@ -54,7 +59,6 @@ export const EmployeeTableZone = () => {
                     seenEntries={tableParams.seenEntries}
                     pageNumber={tableParams.pageNumber}
                 />
-
                 <TablePaginator
                     totalEntries={employeesLength}
                     seenEntries={tableParams.seenEntries}

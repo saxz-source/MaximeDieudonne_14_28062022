@@ -5,6 +5,9 @@
  * @returns {string} a date like "dd/mm/yyyy"
  */
  export function getFrenchSlashDate(standardDate: Date): string {
+
+    
+
     const formatedDate = standardDate.toLocaleString('fr-FR', {
         day: "2-digit",
         year: "numeric",
@@ -12,3 +15,7 @@
     })
     return formatedDate
 }
+
+
+
+

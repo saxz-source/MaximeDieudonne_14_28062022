@@ -14,7 +14,7 @@ export const SearchEmployee = () => {
 
     return (
         <div className="searchEmployee">
-            <span>Search</span>
+            <span className="searchEmployee--title">Search</span>
             <input type="text" onChange={searchChange} />
         </div>
     );

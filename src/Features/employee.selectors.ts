@@ -1,5 +1,5 @@
 export const getAllEmployees = () => {
     return (state: any) => {
-        return state.employees;
+        return state.employees.employees;
     };
 };

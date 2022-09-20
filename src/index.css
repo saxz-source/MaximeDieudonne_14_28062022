@@ -57,15 +57,18 @@ h4 {
 }
 
 main {
-    padding : 0 10%;
+    padding : 1.5rem 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.employeeTableContainer {
+
+width: 100%;
 }
 
 /***Home***/
 
-.formContainer {
-    padding: 2rem 5rem;
-    border-radius: 15px;
-}
 
 .formContainer form input {
     border-radius: 10px;

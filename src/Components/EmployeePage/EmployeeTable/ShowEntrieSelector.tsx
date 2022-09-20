@@ -1,5 +1,4 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 import { changeSeenEntries } from "../../../Features/tableParams.slice";
 
@@ -18,8 +17,8 @@ export const ShowEntriesSelector = ({
     const selectOptions = ["10", "25", "50", "100"];
 
     return (
-        <div>
-            <span> Show </span>
+        <div className="entriesSelector">
+            <span> Shown entries : </span>
             <label htmlFor="numberOfEntries" className="numberOfEntries--label">
                 Select the amount of entries to display
             </label>
@@ -36,7 +35,6 @@ export const ShowEntriesSelector = ({
                     );
                 })}
             </select>
-            <span> Entries</span>
         </div>
     );
 };

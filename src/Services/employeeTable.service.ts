@@ -1,3 +1,4 @@
+import { getFrenchSlashDate } from "../Functions/transformDate";
 import { Employee } from "../Types/Employee";
 import { SortedColumn, TableParams } from "../Types/TableParams";
 
@@ -59,6 +60,10 @@ const getSearchEmployees = (
     return employee.filter((e: Employee) => {
         return Object.values(e)
             .map((v: string) => {
+                // convert dates
+                if (v.match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})/)) {
+                    return getFrenchSlashDate(new Date(v));
+                }
                 return v;
             })
             .join("")
@@ -78,14 +83,17 @@ const sortEmployees = (
     sortedColumn: SortedColumn
 ): Employee[] => {
     const { name, type } = sortedColumn;
-    // if (typeof employees[0][name] === undefined)
-    if (employees[0][name] instanceof Date) sortDate(employees, name, type);
+
+    console.log(employees[0][name] instanceof Date);
+    if (name === "dateOfBirth" || name === "startDate") {
+        return sortDate(employees, name, type);
+    }
     return sortPropertyString(employees, name, type);
 };
 
 /**
  * Sort the array by string property
- * @param {Employee[]}  employees
+ * @param {Employee[]} employees
  * @param property
  * @param {string} ascending can be up , down or none
  * @returns  {Employee[]}
@@ -95,13 +103,16 @@ export const sortPropertyString = (
     property: string,
     ascending: string
 ): Employee[] => {
-    const sortedArray = employees.sort((a, b) =>
-        a[`${property}`] > b[`${property}`]
-            ? 1
-            : b[`${property}`] > a[`${property}`]
-            ? -1
-            : 0
-    );
+    const sortedArray = employees
+        .slice()
+        .sort((a, b) =>
+            a?.[`${property}`].toUpperCase() > b?.[`${property}`].toUpperCase()
+                ? 1
+                : b?.[`${property}`].toUpperCase() >
+                  a?.[`${property}`].toUpperCase()
+                ? -1
+                : 0
+        );
 
     return ascending === "up" ? sortedArray : sortedArray.reverse();
 };
@@ -118,9 +129,13 @@ export const sortDate = (
     property: string,
     ascending: string
 ): Employee[] => {
-    const sortedArray = employees.sort(
-        (a, b) => a[`${property}`] - b[`${property}`]
-    );
-
+    const sortedArray = employees
+        .slice()
+        .sort(
+            (a, b) =>
+                new Date(a[`${property}`]).getTime() -
+                new Date(b[`${property}`]).getTime()
+        );
+    console.log(sortedArray);
     return ascending === "up" ? sortedArray : sortedArray.reverse();
 };
