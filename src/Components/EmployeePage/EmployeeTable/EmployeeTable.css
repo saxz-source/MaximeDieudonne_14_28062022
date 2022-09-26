@@ -64,6 +64,10 @@
 /* Entries selector ***/
 
 /***************TABLE*******************************************/
+
+
+
+
 .employeeTableZone {
     max-width: fit-content;
     display: flex;
@@ -83,6 +87,24 @@
 .employeeTable {
     border-collapse: separate;
     margin: auto;
+}
+
+
+@media screen and (max-width: 920px) {
+
+    .employeeTableZone {
+        width :98vw;
+    }
+    .employeeTable {
+        width: 920px;
+    }
+    .employeeTableScrollContainer {
+        width: 98vw;
+        overflow-x: scroll;
+        
+    }
+
+   
 }
 
 .employeeTable td {

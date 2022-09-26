@@ -1,3 +1,14 @@
 .employeePage {
     padding-top: 2rem 5rem;
 }
+
+.employeeTableContainer  {
+    width: 100%;
+}
+
+
+@media screen and (max-width :920px){
+    .employeeTableContainer {
+        width: 100vw;
+    }
+}

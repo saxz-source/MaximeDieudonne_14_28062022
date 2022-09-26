@@ -28,7 +28,7 @@ export const EmployeeTable = ({
     ];
 
     return (
-        <>
+        <div className="employeeTableScrollContainer">
             <table className="employeeTable">
                 <thead className="employeeTable--header">
                     <tr>
@@ -97,7 +97,7 @@ export const EmployeeTable = ({
                 </tbody>
             </table>
             {employees.length < 1 && <p> Aucun employee n'est enregistré</p>}
-        </>
+        </div>
     );
 };
 
