@@ -1,29 +1,79 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Modal.css";
-
-interface ModalMessage {
-    text: string;
-    classNames: string[];
-}
+import {
+    CloseModalCSSProperties,
+    ModalCSSProperties,
+} from "./Types/ModalCSSProperties";
 
 interface ModalProps {
-    modalMessages: ModalMessage[];
+    modalMessages: string[];
+    modalCSSProperties: ModalCSSProperties;
+    closeModalCSSProperties: CloseModalCSSProperties;
+    isOpen: boolean;
+    backGroundShadow: boolean;
+    closeModal: () => void;
 }
 
-const Modal = ({ modalMessages }: ModalProps): JSX.Element => {
+const Modal = ({
+    modalMessages,
+    isOpen,
+    closeModal,
+    modalCSSProperties,
+    closeModalCSSProperties,
+    backGroundShadow,
+}: ModalProps) => {
     const [open, setOpen] = useState(false);
 
-    const closeModal = (): void => {
+    /**
+     * Close the modal
+     * @returns {void}
+     */
+    const onCloseModal = (): void => {
         setOpen(false);
+        closeModal();
     };
 
+    // Handle the visibility of the modal
+    useEffect(() => {
+        setOpen(isOpen);
+        return () => {
+            setOpen(true);
+        };
+    }, [isOpen]);
+
     return (
-        <div>
-            {modalMessages?.map((m: ModalMessage) => {
-                return <p className={m.classNames.join(" ")}>{m.text}</p>;
-            })}
-            <span className="closeModal"> X </span>
-        </div>
+        <>
+            {open && (
+                <div
+                    className={
+                        (backGroundShadow
+                            ? "shadowBackground"
+                            : "transparentBackground") + " modalPage"
+                    }
+                    onClick={onCloseModal}
+                >
+                    <div className="modal" style={modalCSSProperties}>
+                        {modalMessages?.map((m: string) => {
+                            return (
+                                <p
+                                    className="modal--message"
+                                    key={new Date().toString()}
+                                >
+                                    {m}
+                                </p>
+                            );
+                        })}
+                        <span
+                            className="modal--close"
+                            onClick={onCloseModal}
+                            style={closeModalCSSProperties}
+                        >
+                            X
+                        </span>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 

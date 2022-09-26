@@ -61,7 +61,7 @@ export const validateEmployeeForm = (formValues: any): EmployeeFormErrors => {
 };
 
 const valideDepartment = (department: string) => {
-    if (!department) return "required";
+    if (!department) return "Required";
     return "";
 };
 const validateFirstName = (firstName: string) => {

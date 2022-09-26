@@ -36,7 +36,7 @@ const SelectInputWrapper = ({
                 <option className="option--placeholder-like">Select one</option>
                 {options.map((o: { value: string; text: string }) => {
                     return (
-                        <option key={o.value} value={o.value}>
+                        <option key={o.value} value={o.text}>
                             {o.text}
                         </option>
                     );

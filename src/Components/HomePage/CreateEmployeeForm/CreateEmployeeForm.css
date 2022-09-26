@@ -63,7 +63,7 @@
 
 #create-employee input:focus,
 #create-employee select:focus {
-    outline: 1px solid black;
+    outline: 1px solid #cbec25;
 }
 
 .formLabel {
@@ -76,9 +76,8 @@
 }
 
 .formError {
-    font-style: italic;
     color: rgb(255, 43, 43);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .formError--invisible {

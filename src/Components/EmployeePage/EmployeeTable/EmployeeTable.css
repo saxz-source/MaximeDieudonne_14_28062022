@@ -14,9 +14,7 @@
     left: -10000px;
 }
 
-.entriesSelector--select{
-
-
+.entriesSelector--select {
     border: 1px solid rgba(67, 72, 80, 0.3);
     font-size: 14px;
     line-height: 16px;
@@ -30,14 +28,12 @@
 }
 
 .entriesSelector--select::after {
-    color : blue
+    color: blue;
 }
-
 
 .entriesSelector--select:focus {
     outline: 1px solid #cbec25;
 }
-
 
 /* Search employee div */
 
@@ -46,7 +42,6 @@
     justify-content: space-between;
     align-items: baseline;
 }
-
 
 .searchEmployee--input {
     border: 1px solid rgba(67, 72, 80, 0.3);

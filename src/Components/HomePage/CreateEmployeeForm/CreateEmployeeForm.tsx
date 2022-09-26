@@ -10,7 +10,14 @@ import { useDispatch } from "react-redux";
 import { addEmployee } from "../../../Features/employees.slice";
 import SubmitButton from "../../Buttons/SubmitButton";
 
-const CreateEmployeeForm = () => {
+interface CreateEmployeeFormProps {
+
+    handleModalOpening : (isOpen:boolean, isSuccess:boolean)=> void
+
+}
+
+
+const CreateEmployeeForm = ({handleModalOpening}: CreateEmployeeFormProps) => {
     const selectOptions: { text: string; value: string }[] = [
         {
             text: "Sales",
@@ -37,6 +44,7 @@ const CreateEmployeeForm = () => {
 
     const onSubmit = (e: any) => {
         dispatch(addEmployee(e));
+        handleModalOpening(true, true)
         return;
     };
 
