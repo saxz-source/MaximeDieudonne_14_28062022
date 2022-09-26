@@ -18,19 +18,19 @@ export const ShowEntriesSelector = ({
 
     return (
         <div className="entriesSelector">
-            <span> Shown entries : </span>
             <label htmlFor="numberOfEntries" className="numberOfEntries--label">
                 Select the amount of entries to display
             </label>
             <select
                 id="numberOfEntries"
-                value = {seenEntries ? seenEntries : "10"}
+                value={seenEntries ? seenEntries : "10"}
                 onChange={onChangeSeenEntries}
+                className="entriesSelector--select"
             >
                 {selectOptions.map((o: string) => {
                     return (
                         <option value={o} key={nanoid()}>
-                            {o}
+                            {o} entries
                         </option>
                     );
                 })}
@@ -40,3 +40,7 @@ export const ShowEntriesSelector = ({
 };
 
 export default ShowEntriesSelector;
+
+{
+    /* <span> Shown entries : </span> */
+}

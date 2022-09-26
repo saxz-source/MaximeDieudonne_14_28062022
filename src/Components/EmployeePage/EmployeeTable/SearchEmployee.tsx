@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
 import { changeSearchValue } from "../../../Features/tableParams.slice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export const SearchEmployee = () => {
     const dispatch = useDispatch();
@@ -14,10 +16,12 @@ export const SearchEmployee = () => {
 
     return (
         <div className="searchEmployee">
-            <span className="searchEmployee--title">Search</span>
-            <input type="text" onChange={searchChange} />
+ 
+            <input type="text" className="searchEmployee--input" onChange={searchChange} placeholder='Search...' />
         </div>
     );
 };
 
 export default SearchEmployee;
+{/* <span className="searchEmployee--title">Search</span>
+<FontAwesomeIcon icon={faMagnifyingGlass}/> */}

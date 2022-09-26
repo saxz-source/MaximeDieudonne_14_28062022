@@ -15,5 +15,5 @@
 }
 
 .formButton:hover {
-    background-color: var(--firstLogoColor);
+    background-color: rgb(164, 179, 123);
 }

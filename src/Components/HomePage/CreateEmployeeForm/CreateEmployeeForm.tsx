@@ -8,6 +8,7 @@ import {
 import SelectInputWrapper from "./SelectInputWrapper";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../../../Features/employees.slice";
+import SubmitButton from "../../Buttons/SubmitButton";
 
 const CreateEmployeeForm = () => {
     const selectOptions: { text: string; value: string }[] = [
@@ -205,7 +206,7 @@ const CreateEmployeeForm = () => {
                         <legend>Department</legend>
                     </fieldset>
                     <div className="form--button-zone">
-                        <button type="submit"> button </button>
+                        <SubmitButton classNames="formButton" text="Register"/>
                     </div>
                 </form>
             )}

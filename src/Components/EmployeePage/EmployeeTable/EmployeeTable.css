@@ -3,7 +3,7 @@
 .tableAbove {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     font-size: 0.8rem;
 }
 
@@ -14,16 +14,56 @@
     left: -10000px;
 }
 
+.entriesSelector--select{
+
+
+    border: 1px solid rgba(67, 72, 80, 0.3);
+    font-size: 14px;
+    line-height: 16px;
+    height: 28px;
+    padding: 0 9px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 0.75rem;
+}
+
+.entriesSelector--select::after {
+    color : blue
+}
+
+
+.entriesSelector--select:focus {
+    outline: 1px solid #cbec25;
+}
+
+
 /* Search employee div */
 
 .searchEmployee {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
-.searchEmployee--title {
-    margin-right: 0.5rem;
+
+.searchEmployee--input {
+    border: 1px solid rgba(67, 72, 80, 0.3);
+    font-size: 14px;
+    line-height: 16px;
+    height: 28px;
+    padding: 9px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.searchEmployee--input::placeholder {
+    font-weight: 200;
+    font-size: 00.75rem;
+}
+.searchEmployee--input:focus {
+    outline: 1px solid #cbec25;
 }
 
 /* Entries selector ***/
