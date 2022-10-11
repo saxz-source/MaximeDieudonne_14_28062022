@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { changePageNumber } from "../../../Features/tableParams.slice";
 import { populatePageNumberArray } from "../../../Services/employeeTable.service";
 
-interface TablePaginator {
+interface TablePaginatorProps {
     totalEntries: number;
     seenEntries: number;
     pageNumber: number;
@@ -14,24 +14,37 @@ export const TablePaginator = ({
     totalEntries,
     seenEntries,
     pageNumber,
-}: TablePaginator) => {
+}: TablePaginatorProps) => {
     const [tabArray, setTabArray] = useState<number[]>([1]);
 
     const dispatch = useDispatch();
 
+    /**
+     * Modify the page of results selected bu the users
+     * @param {number} tabNumber
+     * @returns {void}
+     */
     const handleSelectedPageNumber = (tabNumber: number): void => {
+        // Limit the floor
         if (tabNumber < 1) tabNumber = 1;
-        if (tabNumber > tabArray.length) tabNumber = tabArray.length;
+
+
+      console.log( totalEntries / seenEntries) 
+        // Limit the ceil
+        if (tabNumber > Math.trunc(totalEntries / seenEntries) +1 )
+            tabNumber = tabArray.slice(-1)[0];
         dispatch(changePageNumber(tabNumber));
     };
 
     /**
      * Make the array of page numbers
+     * @returns {void}
      */
     const onPopulatePageNumberArray = (): void => {
         const pageNumberArray = populatePageNumberArray(
             totalEntries,
-            seenEntries
+            seenEntries,
+            pageNumber
         );
         setTabArray(pageNumberArray);
     };

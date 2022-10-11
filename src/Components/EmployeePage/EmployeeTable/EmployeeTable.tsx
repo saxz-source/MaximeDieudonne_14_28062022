@@ -1,5 +1,4 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useMemo } from "react";
 import { getFrenchSlashDate } from "../../../Functions/transformDate";
 import { Employee } from "../../../Types/Employee";
 import { TableParams } from "../../../Types/TableParams";
@@ -96,7 +95,7 @@ export const EmployeeTable = ({
                         })}
                 </tbody>
             </table>
-            {employees.length < 1 && <p> Aucun employee n'est enregistré</p>}
+            {employees.length < 1 && <p> No employees found</p>}
         </div>
     );
 };

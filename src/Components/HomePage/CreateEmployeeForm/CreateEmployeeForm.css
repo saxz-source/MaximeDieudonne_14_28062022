@@ -45,6 +45,7 @@
     height: 44px;
     padding: 9px;
     width: 100%;
+    font-family: "Segoe UI";
 }
 
 #create-employee select {
@@ -52,7 +53,7 @@
     border: 1px solid var(--midgrey);
     font-size: 14px;
     line-height: 16px;
-    background-color: transparent;
+    background-color: white;
     border-radius: 6px;
     border: 1px solid rgba(67, 72, 80, 0.3);
     color: rgb(26, 26, 26);

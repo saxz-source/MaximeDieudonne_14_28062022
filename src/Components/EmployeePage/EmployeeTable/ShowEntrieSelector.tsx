@@ -1,6 +1,9 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { changeSeenEntries } from "../../../Features/tableParams.slice";
+import {
+    changePageNumber,
+    changeSeenEntries,
+} from "../../../Features/tableParams.slice";
 
 interface ShowEntriesSelectorProps {
     seenEntries: number;
@@ -12,6 +15,7 @@ export const ShowEntriesSelector = ({
     const dispatch = useDispatch();
     const onChangeSeenEntries = (e: any): void => {
         dispatch(changeSeenEntries(Number(e.target.value)));
+        dispatch(changePageNumber(1));
     };
 
     const selectOptions = ["10", "25", "50", "100"];

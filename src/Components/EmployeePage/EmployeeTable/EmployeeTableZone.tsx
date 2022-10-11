@@ -18,8 +18,8 @@ import {
 import StandardLoader from "../../Loader/StandardLoader";
 
 export const EmployeeTableZone = () => {
-    //  const employeesArray: Employee[] = mockEmployees;
-    const employeesArray: Employee[] = useSelector(getAllEmployees());
+      const employeesArray: Employee[] = mockEmployees;
+   // const employeesArray: Employee[] = useSelector(getAllEmployees());
     const tableParams: TableParams = useSelector(getTableParams());
 
     const [employeesLength, setEmployeesLength] = useState<number>(

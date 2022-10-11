@@ -1,7 +1,7 @@
 import { FieldMetaState } from "react-final-form";
 import FormError from "./FormError";
 
-interface SelectInputWrapper {
+interface SelectInputWrapperProps {
     labelText: string;
     inputId: string;
     options: { text: string; value: string }[];
@@ -16,7 +16,7 @@ const SelectInputWrapper = ({
     options,
     meta,
     ...input
-}: SelectInputWrapper) => {
+}: SelectInputWrapperProps) => {
     return (
         <div>
             <label

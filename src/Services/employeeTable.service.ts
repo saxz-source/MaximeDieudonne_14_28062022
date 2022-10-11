@@ -10,11 +10,23 @@ import { SortedColumn, TableParams } from "../Types/TableParams";
  */
 export const populatePageNumberArray = (
     totalEntries: number,
-    seenEntries: number
+    seenEntries: number,
+    pageNumber: number
 ): number[] => {
     const tabsNumber = totalEntries / seenEntries;
     const newArray: number[] = [];
-    for (let i = 1; i < tabsNumber + 1; i++) {
+    // Center and end case
+    if (pageNumber > 2) {
+        for (let i = pageNumber - 2; i < pageNumber + 3; i++) {
+            if (i > tabsNumber + 1) break;
+            newArray.push(i);
+        }
+        return newArray;
+    }
+    // Beginning case
+    for (let i = 1; i < pageNumber + 3; i++) {
+        if (i > tabsNumber + 1) break;
+
         newArray.push(i);
     }
     return newArray;

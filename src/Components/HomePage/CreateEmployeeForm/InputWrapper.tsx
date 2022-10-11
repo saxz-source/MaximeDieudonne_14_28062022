@@ -1,7 +1,7 @@
 import { FieldMetaState } from "react-final-form";
 import FormError from "./FormError";
 
-interface InputWrapper {
+interface InputWrapperProps {
     labelText: string;
     inputId: string;
     inputType: string;
@@ -14,7 +14,7 @@ const InputWrapper = ({
     inputType,
     meta,
     ...input
-}: InputWrapper) => {
+}: InputWrapperProps) => {
     return (
         <div>
             <label htmlFor={inputId} className="formLabel">

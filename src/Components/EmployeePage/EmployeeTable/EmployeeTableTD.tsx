@@ -1,10 +1,10 @@
 interface EmployeeTableTDProps {
     text: string;
-    index : number
+    index: number;
 }
 
 const EmployeeTableTD = ({ text, index }: EmployeeTableTDProps) => {
-    return <td > {text}</td>;
+    return <td title={text}> {text}</td>;
 };
 
 export default EmployeeTableTD;
