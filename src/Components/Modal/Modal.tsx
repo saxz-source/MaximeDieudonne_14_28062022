@@ -18,8 +18,6 @@ const Modal = ({
     modalMessages,
     isOpen,
     closeModal,
-    modalCSSProperties,
-    closeModalCSSProperties,
     backGroundShadow,
 }: ModalProps) => {
     const [open, setOpen] = useState(false);
@@ -52,7 +50,7 @@ const Modal = ({
                     }
                     onClick={onCloseModal}
                 >
-                    <div className="modal" style={modalCSSProperties}>
+                    <div className="modal">
                         {modalMessages?.map((m: string) => {
                             return (
                                 <p
@@ -63,11 +61,7 @@ const Modal = ({
                                 </p>
                             );
                         })}
-                        <span
-                            className="modal--close"
-                            onClick={onCloseModal}
-                            style={closeModalCSSProperties}
-                        >
+                        <span className="modal--close" onClick={onCloseModal}>
                             X
                         </span>
                     </div>

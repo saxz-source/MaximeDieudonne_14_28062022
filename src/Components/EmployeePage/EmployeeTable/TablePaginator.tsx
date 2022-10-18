@@ -28,8 +28,6 @@ export const TablePaginator = ({
         // Limit the floor
         if (tabNumber < 1) tabNumber = 1;
 
-
-      console.log( totalEntries / seenEntries) 
         // Limit the ceil
         if (tabNumber > Math.trunc(totalEntries / seenEntries) +1 )
             tabNumber = tabArray.slice(-1)[0];

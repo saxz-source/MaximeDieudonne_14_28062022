@@ -1,8 +1,8 @@
 //import Modal from "../../Modal/Modal";
-import {
-    CloseModalCSSProperties,
-    ModalCSSProperties,
-} from "../../Modal/Types/ModalCSSProperties";
+// import {
+//     CloseModalCSSProperties,
+//     ModalCSSProperties,
+// } from "../../Modal/Types/ModalCSSProperties";
 import { Modal } from "tiny-modal-testy";
 
 interface FormModalProps {
@@ -18,14 +18,14 @@ const FormModal = ({ isOpen, isSuccess, closeModal }: FormModalProps) => {
             : ["An error occured"];
     };
 
-    const modalCSSProperties: ModalCSSProperties = {
+    const modalCSSProperties = {
         zIndex: 1000,
         backgroundColor: "#eff9bd",
         color: "black",
         fontWeight: 350,
     };
 
-    const closeModalCSSProperties: CloseModalCSSProperties = {
+    const closeModalCSSProperties= {
         backgroundColor: "transparent",
         color: "#6c850f",
     };

@@ -96,7 +96,7 @@ const sortEmployees = (
 ): Employee[] => {
     const { name, type } = sortedColumn;
 
-    console.log(employees[0][name] instanceof Date);
+   // console.log(employees[0][name] instanceof Date);
     if (name === "dateOfBirth" || name === "startDate") {
         return sortDate(employees, name, type);
     }
@@ -148,6 +148,6 @@ export const sortDate = (
                 new Date(a[`${property}`]).getTime() -
                 new Date(b[`${property}`]).getTime()
         );
-    console.log(sortedArray);
+   // console.log(sortedArray);
     return ascending === "up" ? sortedArray : sortedArray.reverse();
 };

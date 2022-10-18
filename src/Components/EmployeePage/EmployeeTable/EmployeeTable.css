@@ -83,39 +83,52 @@
 }
 
 .employeeTable {
-    border-collapse: separate;
+    border-collapse: collapse;
     margin: auto;
+    table-layout: fixed;
+    width: 100%;
 }
 
-@media screen and (max-width: 920px) {
-    .employeeTableZone {
-        width: 98vw;
-    }
-    .employeeTable {
-        width: 920px;
-    }
-    .employeeTableScrollContainer {
-        width: 98vw;
-        overflow-x: scroll;
-    }
+.employeeTableScrollContainer {
+    overflow-x: scroll;
+    max-width: 97vw;
+}
+
+.employeeTableScrollContainer::-webkit-scrollbar {
+    background: rgb(242, 242, 242);
+
+    height: 10px;
+}
+
+.employeeTableScrollContainer::-webkit-scrollbar-thumb {
+    background-color: #6f840f5f;
+}
+
+.employeeTable--line {
+    transition: 0.2s;
+}
+
+.employeeTable--line:hover {
+    background-color: #cbec2589;
 }
 
 .employeeTable td {
-    padding: 0.2rem 0.4rem;
+    white-space: nowrap;
+    width: 130px;
+    font-weight: 400;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(67, 72, 80, 0.136);
+    padding: 0.6rem 1rem;
+    overflow: hidden;
 }
 
 .employeeTable tbody tr {
     background-color: #ffffff;
 }
 
-.employeeTable td {
-    font-weight: 400;
-    font-size: 0.85rem;
-    border-bottom: 1px solid rgba(67, 72, 80, 0.136);
-    padding: 0.6rem 0.4rem;
-}
-
-.employeeTable th {
+* .employeeTable th {
+    width: 130px;
+    white-space: nowrap;
     font-weight: 300;
     font-size: 1rem;
     padding: 0.3rem 0.4rem;

@@ -61,6 +61,22 @@ main {
     }
 }
 
+@media screen and (max-width: 980px) {
+    .employeeTableContainer {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 980px) {
+  
+    .employeeTable {
+        width: 920px;
+    }
+    .employeeTableScrollContainer {
+        width: 98vw;
+    }
+}
+
 /***Home***/
 
 .formContainer form input {

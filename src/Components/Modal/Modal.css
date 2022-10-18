@@ -21,6 +21,13 @@
     color: white;
 }
 
+.modal {
+    z-index: 1000;
+    background-color: "#eff9bd";
+    color: "black";
+    font-weight: 350;
+}
+
 .modal--close {
     position: absolute;
     top: 0.1rem;
@@ -36,6 +43,11 @@
     align-items: center;
     font-size: 0.85rem;
     transition: 0.2s;
+}
+
+.modal--close {
+    background-color: "transparent";
+    color: "#6c850f";
 }
 
 .transparentBackground {
