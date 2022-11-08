@@ -91,7 +91,7 @@
 
 .employeeTableScrollContainer {
     overflow-x: scroll;
-    max-width: 97vw;
+    max-width: 86vw;
 }
 
 .employeeTableScrollContainer::-webkit-scrollbar {

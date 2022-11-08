@@ -18,13 +18,16 @@ import {
 import StandardLoader from "../../Loader/StandardLoader";
 
 export const EmployeeTableZone = () => {
-      const employeesArray: Employee[] = mockEmployees;
-   // const employeesArray: Employee[] = useSelector(getAllEmployees());
+    // Get all the employees array
+    // const employeesArray: Employee[] = mockEmployees;
+    const employeesArray: Employee[] = useSelector(getAllEmployees());
+    // Get the table parameters
     const tableParams: TableParams = useSelector(getTableParams());
-
+    // Get the length of the table
     const [employeesLength, setEmployeesLength] = useState<number>(
         employeesArray.length
     );
+    // Get the number of viewed employees
     const [viewedEmployees, setViewedEmployees] =
         useState<Employee[]>(employeesArray);
 

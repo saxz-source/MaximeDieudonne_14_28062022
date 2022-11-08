@@ -69,11 +69,13 @@ const getSearchEmployees = (
     employee: Employee[],
     searchValue: string
 ): Employee[] => {
+    //console.log(employee)
+
     return employee.filter((e: Employee) => {
         return Object.values(e)
             .map((v: string) => {
-                // convert dates
-                if (v.match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})/)) {
+                //  convert dates
+                if (v.toString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})/)) {
                     return getFrenchSlashDate(new Date(v));
                 }
                 return v;
@@ -96,7 +98,7 @@ const sortEmployees = (
 ): Employee[] => {
     const { name, type } = sortedColumn;
 
-   // console.log(employees[0][name] instanceof Date);
+    // console.log(employees[0][name] instanceof Date);
     if (name === "dateOfBirth" || name === "startDate") {
         return sortDate(employees, name, type);
     }
@@ -118,10 +120,11 @@ export const sortPropertyString = (
     const sortedArray = employees
         .slice()
         .sort((a, b) =>
-            a?.[`${property}`].toUpperCase() > b?.[`${property}`].toUpperCase()
+            a?.[`${property}`].toString().toUpperCase() >
+            b?.[`${property}`].toString().toUpperCase()
                 ? 1
-                : b?.[`${property}`].toUpperCase() >
-                  a?.[`${property}`].toUpperCase()
+                : b?.[`${property}`].toString().toUpperCase() >
+                  a?.[`${property}`].toString().toUpperCase()
                 ? -1
                 : 0
         );
@@ -148,6 +151,6 @@ export const sortDate = (
                 new Date(a[`${property}`]).getTime() -
                 new Date(b[`${property}`]).getTime()
         );
-   // console.log(sortedArray);
+    // console.log(sortedArray);
     return ascending === "up" ? sortedArray : sortedArray.reverse();
 };

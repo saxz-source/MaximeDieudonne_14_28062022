@@ -3,12 +3,12 @@ export type Employee = {
     id: string;
     firstName: string;
     lastName: string;
-    dateOfBirth: Date;
-    startDate: Date;
+    dateOfBirth: string;
+    startDate: string;
     street: string;
     city: string;
     state: string;
-    zipCode: number;
+    zipCode: string;
     department: string;
 };
 
