@@ -15,12 +15,11 @@ import {
     getDisplayedEmployees,
     getViewedEmployees,
 } from "../../../Services/employeeTable.service";
-import StandardLoader from "../../Loader/StandardLoader";
 
 export const EmployeeTableZone = () => {
     // Get all the employees array
-    // const employeesArray: Employee[] = mockEmployees;
-    const employeesArray: Employee[] = useSelector(getAllEmployees());
+    const employeesArray: Employee[] = mockEmployees;
+   // const employeesArray: Employee[] = useSelector(getAllEmployees());
     // Get the table parameters
     const tableParams: TableParams = useSelector(getTableParams());
     // Get the length of the table
@@ -34,10 +33,10 @@ export const EmployeeTableZone = () => {
     useEffect(() => {
         if (employeesArray.length > 0) {
             // Get the array of employees corresponding to the search value, and sorted
-            const newArray = getDisplayedEmployees(tableParams, employeesArray);
-            setEmployeesLength(newArray.length);
+            const allEmployeesArray = getDisplayedEmployees(tableParams, employeesArray);
+            setEmployeesLength(allEmployeesArray.length);
             // Just get the viewed employees
-            setViewedEmployees(getViewedEmployees(tableParams, newArray));
+            setViewedEmployees(getViewedEmployees(tableParams, allEmployeesArray));
         }
     }, [tableParams]);
 

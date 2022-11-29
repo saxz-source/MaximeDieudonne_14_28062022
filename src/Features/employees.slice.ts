@@ -21,18 +21,3 @@ export const employeesSlice = createSlice({
 export const { addEmployee } = employeesSlice.actions;
 
 export default employeesSlice.reducer;
-
-// {
-//     id : "",
-//     firstName: "",
-//     lastName: "",
-//     birthDate: new Date(),
-//     startDate: new Date(),
-//     adress: {
-//         street : "",
-//         city : "",
-//         zipCode : 0,
-//         state:""
-//     },
-//     department: "",
-// };

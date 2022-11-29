@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CreateEmpFormZone from "../CreateEmployeeForm/CreateEmpFormZone";
-import FormModal from "../FormModal/FormModal";
+import FormModal from "../FormModal/FormModal" ;
 import "./HomePage.css";
 
 interface formModalInfos {

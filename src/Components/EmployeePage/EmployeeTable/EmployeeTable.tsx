@@ -44,51 +44,30 @@ export const EmployeeTable = ({
                 </thead>
                 <tbody className="employeeTable--body">
                     {employees.length > 0 &&
-                        employees.map((e: Employee, index: number) => {
+                        employees.map((e: Employee) => {
                             return (
                                 <tr
                                     key={nanoid()}
                                     className="employeeTable--line"
                                 >
-                                    <EmployeeTableTD
-                                        text={e.firstName}
-                                        index={index}
-                                    />
-                                    <EmployeeTableTD
-                                        text={e.lastName}
-                                        index={index}
-                                    />
+                                    <EmployeeTableTD text={e.firstName} />
+                                    <EmployeeTableTD text={e.lastName} />
                                     <EmployeeTableTD
                                         text={getFrenchSlashDate(
                                             new Date(e.startDate)
                                         )}
-                                        index={index}
                                     />
-                                    <EmployeeTableTD
-                                        text={e.department}
-                                        index={index}
-                                    />
+                                    <EmployeeTableTD text={e.department} />
                                     <EmployeeTableTD
                                         text={getFrenchSlashDate(
                                             new Date(e.dateOfBirth)
                                         )}
-                                        index={index}
                                     />
-                                    <EmployeeTableTD
-                                        text={e.street}
-                                        index={index}
-                                    />
-                                    <EmployeeTableTD
-                                        text={e.city}
-                                        index={index}
-                                    />
-                                    <EmployeeTableTD
-                                        text={e.state}
-                                        index={index}
-                                    />
+                                    <EmployeeTableTD text={e.street} />
+                                    <EmployeeTableTD text={e.city} />
+                                    <EmployeeTableTD text={e.state} />
                                     <EmployeeTableTD
                                         text={e.zipCode.toString()}
-                                        index={index}
                                     />
                                 </tr>
                             );

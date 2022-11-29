@@ -1,9 +1,8 @@
 interface EmployeeTableTDProps {
     text: string;
-    index: number;
 }
 
-const EmployeeTableTD = ({ text, index }: EmployeeTableTDProps) => {
+const EmployeeTableTD = ({ text }: EmployeeTableTDProps) => {
     return <td title={text}> {text}</td>;
 };
 

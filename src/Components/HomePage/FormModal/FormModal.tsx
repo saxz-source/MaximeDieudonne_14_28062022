@@ -1,8 +1,3 @@
-//import Modal from "../../Modal/Modal";
-// import {
-//     CloseModalCSSProperties,
-//     ModalCSSProperties,
-// } from "../../Modal/Types/ModalCSSProperties";
 import { Modal } from "tiny-modal-testy";
 
 interface FormModalProps {

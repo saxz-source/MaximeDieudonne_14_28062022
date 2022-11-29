@@ -29,7 +29,7 @@ export const validateEmployeeForm = (formValues: any): EmployeeFormErrors => {
     const firstNameError = validateFirstName(formValues.firstName);
     if (firstNameError !== "") errors.firstName = firstNameError;
     const lastNameError = validateLastName(formValues.lastName);
-    if (lastNameError !== "") errors.lastNameName = lastNameError;
+    if (lastNameError !== "") errors.lastName = lastNameError;
     const dateOfBirthError = validateDateOfBirth(formValues.dateOfBirth);
     if (dateOfBirthError !== "") errors.dateOfBirth = dateOfBirthError;
     const startDateError = validateStartDate(formValues.startDate);
@@ -61,7 +61,7 @@ export const validateEmployeeForm = (formValues: any): EmployeeFormErrors => {
 };
 
 const valideDepartment = (department: string) => {
-    if (!department) return "Required";
+    if (!department || department === "Select one") return "Required";
     return "";
 };
 const validateFirstName = (firstName: string) => {

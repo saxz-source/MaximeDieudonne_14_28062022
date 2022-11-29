@@ -96,12 +96,6 @@ const CreateEmployeeForm = ({handleModalOpening}: CreateEmployeeFormProps) => {
                         <Field name="dateOfBirth">
                             {({ input, meta }) => {
                                 return (
-                                    // <DateInputWrapper
-                                    //     inputId="date-of-birth"
-                                    //     labelText="Date of birth"
-                                    //     input={input}
-                                    //     meta={meta}
-                                    // />
                                     <>
                                         <InputWrapper
                                             inputId="date-of-birth"
