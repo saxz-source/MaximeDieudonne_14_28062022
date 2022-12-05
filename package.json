@@ -50,6 +50,6 @@
         ]
     },
     "devDependencies": {
-        "tiny-modal-testy": "^1.1.3"
+        "tiny-modal-testy": "^1.1.4"
     }
 }

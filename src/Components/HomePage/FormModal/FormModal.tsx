@@ -1,5 +1,8 @@
 import { Modal } from "tiny-modal-testy";
 
+//import Modal from "../../Modal/Modal";
+
+
 interface FormModalProps {
     isOpen: boolean;
     isSuccess: boolean;

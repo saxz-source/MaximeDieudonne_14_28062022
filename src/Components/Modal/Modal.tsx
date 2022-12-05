@@ -18,6 +18,8 @@ const Modal = ({
     modalMessages,
     isOpen,
     closeModal,
+    modalCSSProperties,
+    closeModalCSSProperties,
     backGroundShadow,
 }: ModalProps) => {
     const [open, setOpen] = useState(false);
@@ -34,14 +36,12 @@ const Modal = ({
     // Handle the visibility of the modal
     useEffect(() => {
         setOpen(isOpen);
-        return () => {
-            setOpen(true);
-        };
+
     }, [isOpen]);
 
     return (
         <>
-            {open && (
+           {open && (
                 <div
                     className={
                         (backGroundShadow
@@ -50,7 +50,7 @@ const Modal = ({
                     }
                     onClick={onCloseModal}
                 >
-                    <div className="modal">
+                    <div className="modal" style={modalCSSProperties}>
                         {modalMessages?.map((m: string) => {
                             return (
                                 <p
@@ -61,7 +61,11 @@ const Modal = ({
                                 </p>
                             );
                         })}
-                        <span className="modal--close" onClick={onCloseModal}>
+                        <span
+                            className="modal--close"
+                            onClick={onCloseModal}
+                            style={closeModalCSSProperties}
+                        >
                             X
                         </span>
                     </div>
