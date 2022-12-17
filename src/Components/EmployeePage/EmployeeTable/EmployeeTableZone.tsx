@@ -19,7 +19,7 @@ import {
 export const EmployeeTableZone = () => {
     // Get all the employees array
     const employeesArray: Employee[] = mockEmployees;
-   // const employeesArray: Employee[] = useSelector(getAllEmployees());
+  // const employeesArray: Employee[] = useSelector(getAllEmployees());
     // Get the table parameters
     const tableParams: TableParams = useSelector(getTableParams());
     // Get the length of the table
